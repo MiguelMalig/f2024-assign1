@@ -1,22 +1,23 @@
 <?php
-    define(conn, "sqlite:" .__DIR__ . "/data/f1.db");
-    $user = "username";
-    $pass = "password";
 
-    try {
-        $pdo = new PDO(conn, $user, $pass);
-
-
-    }
-    catch(PDOConnection $e) {
-        echo "Connection error";
-        echo $e -> getMessage();
-    }
-
-
-    function getData($sql, $parameters = null); {
+class Database {
+    
+    function createConnection() {
+        define(conn, "sqlite:./data/f1.db");
+        $user = "username";
+        $pass = "password";
         try {
-            global $pdo;
+            $pdo = new PDO(conn, $user, $pass);
+        }
+        catch(PDOConnection $e) {
+            echo "Connection error";
+            echo $e -> getMessage();
+        }
+        return $pdo;
+    }
+
+    function getData($sql, $parameters = null, $pdo); {
+        try {
 
             // if no parameters are passed, return data from sql statement.
             if ($parameters === null) {
@@ -48,4 +49,5 @@
             return null;
         }
     }
+}
 
