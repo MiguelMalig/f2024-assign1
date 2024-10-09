@@ -6,11 +6,11 @@ header('Content-Type: application/json');
 $driver = getData("SELECT driverRef from drivers"); // don't know why I put this here, going to keep it just in case I remember why..
 
 
-switch () {
+switch (true) {
     // if driver is passed as a query string..
     case isset($_GET['driverRef']):
         $driverRef = $_GET['driverRef'];
-        $results = getData("SELECT * from drivers WHERE driverRef= ?", $_GET['driverRef']);
+        $results = Database::getData("SELECT * from drivers WHERE driverRef= ?", $_GET['driverRef']);
         break;
 
     // if race is passed as a query string..
