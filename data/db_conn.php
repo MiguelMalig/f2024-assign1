@@ -18,7 +18,7 @@ class Database {
         return $pdo;
     }
 
-    function getData($sql, $parameters = null, $pdo) {
+    function getData($sql, , $pdo , $parameters = null) {
         try {
 
             // if no parameters are passed, return data from sql statement.
