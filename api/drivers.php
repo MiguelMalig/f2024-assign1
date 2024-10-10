@@ -3,7 +3,7 @@ include __DIR__ . "data/db_conn.php";
 
 header('Content-Type: application/json');
 
-$driver = getData("SELECT driverRef from drivers"); // don't know why I put this here, going to keep it just in case I remember why..
+//$driver = getData("SELECT driverRef from drivers"); // don't know why I put this here, going to keep it just in case I remember why..
 
 
 switch (true) {

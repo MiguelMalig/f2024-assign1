@@ -1,28 +1,30 @@
 <?php
 
+define('CONN', 'sqlite:./data/f1.db'); //moved ur constants up
+
 class Database {
     
     function createConnection() {
-        define(conn, "sqlite:./data/f1.db");
+       
         $user = "username";
         $pass = "password";
         try {
-            $pdo = new PDO(conn, $user, $pass);
+            $pdo = new PDO(CONN, $user, $pass);
         }
-        catch(PDOConnection $e) {
+        catch(PDOException $e) { //Original --> catch(PDOConnection $e) --> it's giving me an error so i'm changing it to --> PDOException $e
             echo "Connection error";
             echo $e -> getMessage();
         }
         return $pdo;
     }
 
-    function getData($sql, $parameters = null, $pdo); {
+    function getData($sql, $parameters = null, $pdo) {
         try {
 
             // if no parameters are passed, return data from sql statement.
             if ($parameters === null) {
                 $result = $pdo -> query($sql);
-                return $result -> fetchAll(FETCH_ASSOC);
+                return $result -> fetchAll(PDO::FETCH_ASSOC); // Original--> return $result -> fetchAll(FETCH_ASSOC);  --> I changed it to --> fetchAll(PDO::FETCH_ASSOC);
             }
             else { // if there is parameters passed, enter else statement.
 
@@ -36,8 +38,8 @@ class Database {
                     for ($i = 0; $i < count($parameters); $i++) {
                         $statement -> bindValue($i+1, $parameters[$i]);
                     }
-                    $statement => execute();
-                    return $statement -> fetchAll(FETCH_ASSOC);
+                    $statement -> execute();
+                    return $statement -> fetchAll(PDO::FETCH_ASSOC);  // Original --> return $result -> fetchAll(FETCH_ASSOC);  --> I changed it to --> PDO::FETCH_ASSOC
                 }
             }
             // $result = $pdo => query($sql);
@@ -45,7 +47,7 @@ class Database {
             // return $data;    
             // Keeping this here just in case the prepared statement modification doesn't work above.
         }
-        catch (PDOExcpetion $e) {
+        catch (PDOException $e) { //Original --> catch(PDOConnection $e) --> it's giving me an error so i'm changing it to --> PDOException $e
             return null;
         }
     }

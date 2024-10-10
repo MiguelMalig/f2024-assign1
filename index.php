@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <title>F1 Dashboard Project</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="css\styles.css">
 
 </head>
 <body>
@@ -21,7 +21,8 @@
     </header>
 <main>
     <div class="container">
-        <div class="sidebar">
+        <div class="sidebar"> 
+            //ill completely change this layout once we got functions working.
             <h1>What this site is about?</h1><br>
             <p>This site is about Formula 1 car racing data. Specifically season 2022.</p></p>
             <h2>What technologies you are using:</h2>
@@ -32,7 +33,7 @@
             <p><strong>github repo: https://github.com/MiguelMalig/f2024-assign1</p> 
         </div>
             <div class="main-content">
-                <img src="/photos/Formula1homepage.webp" alt="formula1racecar">
+                <img src="photos\Formula1homepage.webp" alt="formula1racecar">
             </div>
     </div>
         
