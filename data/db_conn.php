@@ -1,10 +1,10 @@
 <?php
 
-define('CONN', 'sqlite:./data/f1.db'); //moved ur constants up
+define('CONN', 'sqlite:../data/f1.db'); //moved ur constants up
 
 class Database {
     
-    function createConnection() {
+    public static function createConnection() {
        
         $user = "username";
         $pass = "password";
@@ -18,7 +18,7 @@ class Database {
         return $pdo;
     }
 
-    function getData($sql, , $pdo , $parameters = null) {
+    public static function getData($sql, $pdo , $parameters = null) {
         try {
 
             // if no parameters are passed, return data from sql statement.

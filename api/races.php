@@ -1,5 +1,5 @@
 <?php
-    include_once __DIR__ . "data/db_conn.php";
+    include_once "../data/db_conn.php";
 
     header("Content-Type: application/json");
 

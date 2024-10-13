@@ -1,3 +1,16 @@
+<?php
+require_once 'data/db_conn.php';
+// include 'api/drivers.php';
+
+try {
+    $conn = Database::createConnection();
+
+}
+catch(PDOException $e) {
+    echo "Database connection failed.";
+}
+?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -20,9 +33,39 @@
         </nav>
     </header>
 <main>
+    <div>
+        <form action="index.php" method="get">
+                <label> Test Driver Database </label>
+                <input type="text" name="driverRef">
+                <input type="submit" name="Submit">
+        </form>
+    </div>
+    <div>
+        <ul>
+            <?php
+            if (isset($_GET['driverRef'])) {
+                $driverRef = $_GET['driverRef'];
+                $jsonList = file_get_contents("http://localhost/f2024-assign1/api/drivers.php?driverRef=" . urlencode($driverRef));
+                $drivers = json_decode($jsonList, true);
+                foreach ($drivers as $driver) {
+                    echo "<li> " . $driver['driverRef'] . "</li>";
+                }
+            }
+            else {
+                $jsonList = file_get_contents("http://localhost/f2024-assign1/api/drivers.php");
+                $drivers = json_decode($jsonList, true);
+                foreach ($drivers as $driver) {
+                    echo "<li> " . $driver['driverRef'] . "</li>";
+                }
+            }
+            ?>
+        </ul>
+    </div>
+
+
     <div class="container">
         <div class="sidebar"> 
-            //ill completely change this layout once we got functions working.
+            <!-- //ill completely change this layout once we got functions working. -->
             <h1>What this site is about?</h1><br>
             <p>This site is about Formula 1 car racing data. Specifically season 2022.</p></p>
             <h2>What technologies you are using:</h2>
