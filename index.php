@@ -51,7 +51,7 @@ catch(PDOException $e) {
                     echo "<li> " . $driver['driverRef'] . "</li>";
                 }
             }
-            else {
+            else { // This is supposed to return the entire list of drivers if no query string, but its currently not working.
                 $jsonList = file_get_contents("http://localhost/f2024-assign1/api/drivers.php");
                 $drivers = json_decode($jsonList, true);
                 foreach ($drivers as $driver) {
