@@ -4,7 +4,7 @@ require_once 'data/db_conn.php';
 
 try {
     $conn = Database::createConnection();
-
+    echo "test";
 }
 catch(PDOException $e) {
     echo "Database connection failed.";
