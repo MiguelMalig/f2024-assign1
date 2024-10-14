@@ -2,18 +2,27 @@
     include_once "../data/db_conn.php";
 
     header("Content-Type: application/json");
+    
 
+    //drivers.driverRef,constructors.constructorRef,qualifying.q1,qualifying.q2,qualifying.q3*/
+
+    //function getData(){
     $conn = Database::createConnection();
-
+    //WHEN USER CLICKS SELECTION
     if (isset($_GET['raceId'])) {
         $raceId = $_GET['raceId'];
-        $results = Database::getData("SELECT races.raceId, races.circuitId, circuits.name, circuits.location, circuits.country
+        $results = Database::getData("SELECT DISTINCT races.raceId, races.circuitId, circuits.name AS cName, races.name AS rName,races.round,circuits.location, circuits.country,races.date,races.url,drivers.forename,drivers.surname,constructors.constructorRef,qualifying.q1,qualifying.q2,qualifying.q3
                                         FROM races
                                         JOIN circuits ON races.circuitId = circuits.circuitId
-                                        WHERE races.raceID = ?", $conn, $_GET, $_GET['raceId']);
+                                        JOIN qualifying ON races.raceId = qualifying.raceId 
+                                        JOIN drivers ON qualifying.driverID = drivers.driverId
+                                        JOIN constructors ON qualifying.constructorId = constructors.constructorId
+                                        WHERE races.raceID = ?", $conn, $_GET['raceId']);
     }
     else {
-        $results = Database::getData("SELECT races.raceId, races.round, circuits.name, circuits.location, circuits,country
+
+        //WHEN THERES NO SELECTION YET
+        $results = Database::getData("SELECT races.raceId, races.round, races.name as rName, circuits.location, circuits.country
                                         FROM races
                                         JOIN circuits ON races.circuitId = circuits.circuitId
                                         JOIN seasons ON races.year = seasons.year
@@ -21,4 +30,5 @@
                                         ORDER BY races.round ASC", $conn);
     }
 echo json_encode($results);
+  //  }
 ?>
