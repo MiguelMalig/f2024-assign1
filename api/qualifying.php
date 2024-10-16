@@ -7,11 +7,12 @@
 
     if (isset($_GET['raceId'])) {
         $raceId = $_GET['raceId'];
-        $results = Database::getData("SELECT qualifying.raceId, qualifying.driverId, qualifying.constructorId, drivers.forename, drivers.surname, qualifying.q1, qualifying.q2, qualifying.q3, qualifying.position 
+        $results = Database::getData("SELECT qualifying.raceId, qualifying.driverId, qualifying.constructorId, drivers.forename, drivers.surname, qualifying.q1, qualifying.q2, qualifying.q3, qualifying.position, constructors.name AS conName,drivers.driverRef
                                         FROM qualifying
                                         JOIN drivers ON qualifying.driverId = drivers.driverId
+                                        JOIN constructors ON qualifying.constructorId = constructors.constructorId
                                         WHERE qualifying.raceId = ?
-                                        ORDER BY qualifying.position  ASC", $conn, $_GET['raceId']);
+                                        ORDER BY qualifying.position  ASC  LIMIT 10;", $conn, $_GET['raceId']);
     } 
     else {
         // Don't think we need this since instructions doesn't specify to give all of the qualifying table if no query string.

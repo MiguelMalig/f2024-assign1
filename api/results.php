@@ -7,7 +7,7 @@
 
     if (isset($_GET['raceId'])) {
         $raceId = $_GET['raceId'];
-        $results = Database::getData("SELECT results.raceId, results.driverId, results.constructorId, drivers.forename, drivers.surname, results.position, races.year, races.round, races.date, constructors.name, constructors.constructorRef, constructors.nationality
+        $results = Database::getData("SELECT results.raceId, results.driverId, results.constructorId, drivers.forename, drivers.surname, results.position, races.year, races.round, races.date, constructors.name, constructors.constructorRef, constructors.nationality,results.laps,results.points
                                         FROM results
                                         JOIN drivers ON results.driverId = drivers.driverId
                                         JOIN races ON results.raceId = races.raceId

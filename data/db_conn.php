@@ -14,6 +14,7 @@ class Database {
         catch(PDOException $e) { //Original --> catch(PDOConnection $e) --> it's giving me an error so i'm changing it to --> PDOException $e
             echo "Connection error";
             echo $e -> getMessage();
+            return null;
         }
         return $pdo;
     }
