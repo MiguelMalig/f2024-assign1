@@ -2,14 +2,14 @@
 require_once 'data/db_conn.php';
 // include 'api/drivers.php';
 
-try {
-    $conn = Database::createConnection();
-    echo "test";
-}
-catch(PDOException $e) {
-    echo "Database connection failed.";
-}
-?>
+// try {
+//     $conn = Database::createConnection();
+//     echo "test";
+// }
+// catch(PDOException $e) {
+//     echo "Database connection failed.";
+// }
+// ?>
 
 
 <!DOCTYPE html>
@@ -106,30 +106,49 @@ catch(PDOException $e) {
                         //change this to qualifying + results array info.
 
                         echo "<div id = qualifying>";
-                        echo "<h1>Qualifying</h2>";
+                        echo "<h1>Qualifying</h1>";
                         echo "<h3>Driver</h3>";
-                        
+
+                        echo "<table>";
+                        echo "<tr>";
+                        echo "<th> Position </th>";
+                        echo "<th> Name </th>";
+                        echo "<th> Contructor </th>";
+                        echo "<th> Q1 </th>";
+                        echo "<th> Q2 </th>";
+                        echo "<th> Q3 </th>";
+                        echo "</tr>";
                         foreach($qualifying as $qualify){
-                            echo "$qualify[position] ";
-                            echo str_repeat('&nbsp;', 10);
-                            echo "<a href=api\drivers.php?driverRef=$qualify[driverRef]>";
-                            echo "$qualify[forename] ";
-                            echo "$qualify[surname]";
-                            echo "</a>";
-                            echo str_repeat('&nbsp;', 20);
-                            echo "$qualify[conName]";
-                            echo str_repeat('&nbsp;', 20);
-                            echo '  '.          $qualify['q1'] ;
-                            echo str_repeat('&nbsp;', 10);
-                            echo "          $qualify[q2]";
-                            echo str_repeat('&nbsp;', 10);
-                            echo "          $qualify[q3]<br> ";
+
+                            echo "<tr>";
+                            echo "<td>".  $qualify["position"] .  "</td>";
+                            echo "<td>".  $qualify["forename"] . " " . $qualify["surname"] . "</td>";
+                            echo "<td>".  $qualify["conName"] . "</td>";
+                            echo "<td>".  $qualify["q1"] . "</td>";
+                            echo "<td>".  $qualify["q2"] . "</td>";
+                            echo "<td>".  $qualify["q3"] . "</td>";
+                            echo "</tr>";
                         }
+                        echo "</table>";
                         echo "</div>";
 
 
                         echo "<div id = results>";
                         echo "<h1> Results </h1>";
+
+                        echo "<table>";
+                        echo "<tr>";
+
+                        for ($i=0; $i < 3; $i++) {
+                            echo "<th>". $results[$i]["forename"] . " " . $results[$i]["surname"] . "</th>";
+                        }
+                        echo "</tr>";
+
+                        for ($i=0; $i < 3; $i++) {
+                            echo "<td>" . $results[$i]["position"] . "</td>";
+                        }
+                        echo "</tr>";
+                        echo "</table>";
 
                         echo "<table>";
                         echo "<tr>";
@@ -142,21 +161,13 @@ catch(PDOException $e) {
                             
                             echo "<tr>";
                             echo "<td>".  $result["position"] .  "</td>";
-                            echo "<td>".  $result["forename"] . $result["surname"] . "</td>";
+                            echo "<td>".  $result["forename"] . " " . $result["surname"] . "</td>";
                             echo "<td>".  $result["laps"] . "</td>";
                             echo "<td>".  $result["points"] . "</td>";
-
-                            // echo "$result[forename]";
-                            // echo "$result[surname]";
-                            // echo str_repeat('&nbsp;', 20);
-                            // echo "POS=$result[position]";
-                            // echo str_repeat('&nbsp;', 20);
-                            // echo "LAPS=$result[laps]";
-                            // echo str_repeat('&nbsp;', 20);
-                            // echo "POINTS=$result[points]<br>";
-
-
+                            echo "</tr>";
                         }
+                        echo "</table>";
+                        echo "</div>";
 
 
                      }
