@@ -109,7 +109,7 @@ require_once 'data/db_conn.php';
                         echo "<h1>Qualifying</h1>";
                         echo "<h3>Driver</h3>";
 
-                        echo "<table>";
+                        echo "<table id = qtable>";
                         echo "<tr>";
                         echo "<th> Position </th>";
                         echo "<th> Name </th>";
@@ -136,7 +136,7 @@ require_once 'data/db_conn.php';
                         echo "<div id = results>";
                         echo "<h1> Results </h1>";
 
-                        echo "<table>";
+                        echo "<table id = top3>";
                         echo "<tr>";
 
                         for ($i=0; $i < 3; $i++) {
@@ -150,7 +150,7 @@ require_once 'data/db_conn.php';
                         echo "</tr>";
                         echo "</table>";
 
-                        echo "<table>";
+                        echo "<table id = rtable>";
                         echo "<tr>";
                         echo "<th> Position </th>";
                         echo "<th> Name </th>";
