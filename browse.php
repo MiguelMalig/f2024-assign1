@@ -122,7 +122,7 @@ require_once 'data/db_conn.php';
 
                             echo "<tr>";
                             echo "<td>".  $qualify["position"] .  "</td>";
-                            echo "<td>".  $qualify["forename"] . " " . $qualify["surname"] . "</td>";
+                            echo "<td><a href=api\drivers.php?driverRef=$qualify[driverRef]>".  $qualify["forename"] . " " . $qualify["surname"] . "</a></td>";
                             echo "<td>".  $qualify["conName"] . "</td>";
                             echo "<td>".  $qualify["q1"] . "</td>";
                             echo "<td>".  $qualify["q2"] . "</td>";
@@ -161,7 +161,7 @@ require_once 'data/db_conn.php';
                             
                             echo "<tr>";
                             echo "<td>".  $result["position"] .  "</td>";
-                            echo "<td>".  $result["forename"] . " " . $result["surname"] . "</td>";
+                            echo "<td><a href=api\drivers.php?driverRef=$qualify[driverRef]>".  $result["forename"] . " " . $result["surname"] . "</a></td>";
                             echo "<td>".  $result["laps"] . "</td>";
                             echo "<td>".  $result["points"] . "</td>";
                             echo "</tr>";
