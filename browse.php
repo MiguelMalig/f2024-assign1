@@ -130,17 +130,30 @@ catch(PDOException $e) {
 
                         echo "<div id = results>";
                         echo "<h1> Results </h1>";
-                        
+
+                        echo "<table>";
+                        echo "<tr>";
+                        echo "<th> Position </th>";
+                        echo "<th> Name </th>";
+                        echo "<th> Laps </th>";
+                        echo "<th> Points </th>";
+                        echo "<tr>";
                         foreach($results as $result){
                             
-                            echo "$result[forename]";
-                            echo "$result[surname]";
-                            echo str_repeat('&nbsp;', 20);
-                            echo "POS=$result[position]";
-                            echo str_repeat('&nbsp;', 20);
-                            echo "LAPS=$result[laps]";
-                            echo str_repeat('&nbsp;', 20);
-                            echo "POINTS=$result[points]<br>";
+                            echo "<tr>";
+                            echo "<td>".  $result["position"] .  "</td>";
+                            echo "<td>".  $result["forename"] . $result["surname"] . "</td>";
+                            echo "<td>".  $result["laps"] . "</td>";
+                            echo "<td>".  $result["points"] . "</td>";
+
+                            // echo "$result[forename]";
+                            // echo "$result[surname]";
+                            // echo str_repeat('&nbsp;', 20);
+                            // echo "POS=$result[position]";
+                            // echo str_repeat('&nbsp;', 20);
+                            // echo "LAPS=$result[laps]";
+                            // echo str_repeat('&nbsp;', 20);
+                            // echo "POINTS=$result[points]<br>";
 
 
                         }

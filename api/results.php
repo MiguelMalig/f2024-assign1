@@ -13,7 +13,7 @@
                                         JOIN races ON results.raceId = races.raceId
                                         JOIN constructors ON results.constructorId = constructors.constructorId
                                         WHERE results.raceId = ?
-                                        ORDER BY results.grid  ASC", $conn, $_GET['raceId']);
+                                        ORDER BY results.position  ASC", $conn, $_GET['raceId']);
     } 
     else {
         // Don't think we need this since instructions doesn't specify to give all of the qualifying table if no query string.
@@ -23,7 +23,7 @@
                                         JOIN drivers ON results.driverId = drivers.driverId
                                         JOIN races ON results.raceId = races.raceId
                                         JOIN constructors ON results.constructorId = constructors.constructorId
-                                        ORDER BY results.grid  ASC", $conn);
+                                        ORDER BY results.position  ASC", $conn);
     }
 echo json_encode($results);
 ?>

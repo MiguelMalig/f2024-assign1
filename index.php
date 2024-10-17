@@ -2,13 +2,13 @@
 require_once 'data/db_conn.php';
 // include 'api/drivers.php';
 
-try {
-    $conn = Database::createConnection();
+// try {
+//     $conn = Database::createConnection();
 
-}
-catch(PDOException $e) {
-    echo "Database connection failed.";
-}
+// }
+// catch(PDOException $e) {
+//     echo "Database connection failed.";
+// }
 ?>
 
 
@@ -33,17 +33,17 @@ catch(PDOException $e) {
         </nav>
     </header>
 <main>
-    <div>
+    <!-- <div>
         <form action="index.php" method="get">
                 <label> Test Driver Database </label>
                 <input type="text" name="driverRef">
                 <input type="submit" name="Submit">
         </form>
-    </div>
-    <div>
+    </div> -->
+    <!-- <div>
         <ul>
-            <?php
-            if (isset($_GET['driverRef'])) {
+            // <?php
+            // if (isset($_GET['driverRef'])) {
                 /*
                 $driverRef = $_GET['driverRef'];
                 $jsonList = file_get_contents("http://localhost/f2024-assign1/api/drivers.php?driverRef=" . urlencode($driverRef));
@@ -52,17 +52,17 @@ catch(PDOException $e) {
                     echo "<li> " . $driver['driverRef'] . "</li>";
                 }
                     */
-            }
-            else { // This is supposed to return the entire list of drivers if no query string, but its currently not working.
-                $jsonList = file_get_contents("http://localhost/f2024-assign1/api/drivers.php");
-                $drivers = json_decode($jsonList, true);
-                foreach ($drivers as $driver) {
-                    echo "<li> " . $driver['driverRef'] . "</li>";
-                }
-            }
-            ?>
+            // }
+            // else { // This is supposed to return the entire list of drivers if no query string, but its currently not working.
+            //     $jsonList = file_get_contents("http://localhost/f2024-assign1/api/drivers.php");
+            //     $drivers = json_decode($jsonList, true);
+            //     foreach ($drivers as $driver) {
+            //         echo "<li> " . $driver['driverRef'] . "</li>";
+            //     }
+            // }
+            // ?>
         </ul>
-    </div>
+    </div> -->
 
 
     <div class="container">
