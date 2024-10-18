@@ -18,7 +18,7 @@ require_once 'data/db_conn.php';
     <meta charset="UTF-8">
     <title>F1 Dashboard Project</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="css\styles.css">
 </head>
 <body>
@@ -34,13 +34,13 @@ require_once 'data/db_conn.php';
         </nav>
     </header>
 <main>
-    <div>
+    <!-- <div>
         <form action="index.php" method="get">
                 <label> Test Driver Database </label>
                 <input type="text" name="driverRef">
                 <input type="submit" name="Submit">
         </form>
-    </div>
+    </div> -->
     <div>
 
     </div>
@@ -109,7 +109,7 @@ require_once 'data/db_conn.php';
                         echo "<h1>Qualifying</h1>";
                         echo "<h3>Driver</h3>";
 
-                        echo "<table id = qtable>";
+                        echo "<table class = table>";
                         echo "<tr>";
                         echo "<th> Position </th>";
                         echo "<th> Name </th>";
@@ -136,7 +136,7 @@ require_once 'data/db_conn.php';
                         echo "<div id = results>";
                         echo "<h1> Results </h1>";
 
-                        echo "<table id = top3>";
+                        echo "<table class = table>";
                         echo "<tr>";
 
                         for ($i=0; $i < 3; $i++) {
@@ -150,7 +150,7 @@ require_once 'data/db_conn.php';
                         echo "</tr>";
                         echo "</table>";
 
-                        echo "<table id = rtable>";
+                        echo "<table class = table>";
                         echo "<tr>";
                         echo "<th> Position </th>";
                         echo "<th> Name </th>";
