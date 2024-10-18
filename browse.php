@@ -81,7 +81,7 @@ require_once 'data/db_conn.php';
                     
                 ?>
             </div>
-                <div class="content bg-white d-inline-flex p-2">
+                <div class="content bg-white mx-auto">
                     <?php
                         if (isset($_GET['raceId'])) {
                             echo "<div>";
@@ -95,8 +95,8 @@ require_once 'data/db_conn.php';
                             echo "</div>";
 
                             //change this to qualifying + results array info.
-
-                            echo "<div id = qualifying>";
+                        echo "<div class= d-flex flex-row>";
+                            echo "<div class = p-2>";
                             echo "<h1>Qualifying</h1>";
                             echo "<h3>Driver</h3>";
 
@@ -123,23 +123,48 @@ require_once 'data/db_conn.php';
                             echo "</table>";
                             echo "</div>";
 
-
-                            echo "<div id = results>";
+                            // echo "<h1> Results </h1>";
+                            echo "<div class = mx-auto>";
                             echo "<h1> Results </h1>";
-
-                            echo "<table class = table>";
-                            echo "<tr>";
-
+                            echo "<div class= d-flex flex-row >";
+                            // echo "<h1> Results </h1>";
                             for ($i=0; $i < 3; $i++) {
-                                echo "<th>". $results[$i]["forename"] . " " . $results[$i]["surname"] . "</th>";
-                            }
-                            echo "</tr>";
+                                echo "<div class = border border-4 border-danger>";
+                                echo "<h3>". $results[$i]["forename"] . " " . $results[$i]["surname"] . "</h3>";
+                                if ($results[$i]["position"] == 1) {
+                                    echo "<h1>" . $results[$i]["position"] . "st" . "</h1>";
+                                }
+                                else if ($results[$i]["position"] == 2) {
+                                    echo "<h1>" . $results[$i]["position"] . "nd" . "</h1>";
+                                }
+                                else  {
+                                    echo "<h1>" . $results[$i]["position"] . "rd" . "</h1>";
+                                }
+                                // for ($i=0; $i < 3; $i++) {
+                                //     echo "<h3>". $results[$i]["forename"] . " " . $results[$i]["surname"] . "</h3>";
+                                // }
+                                // for ($i=0; $i < 3; $i++) {
+                                //     echo "<h1>" . $results[$i]["position"] . "</h1>";
+                                // }
+                                echo "</div>";
+                            }   
+                            echo "</div>";
+                            // echo "</div>";
+                        
 
-                            for ($i=0; $i < 3; $i++) {
-                                echo "<td>" . $results[$i]["position"] . "</td>";
-                            }
-                            echo "</tr>";
-                            echo "</table>";
+                            // echo "<table class = table>";
+                            // echo "<tr>";
+
+                            // for ($i=0; $i < 3; $i++) {
+                            //     echo "<th>". $results[$i]["forename"] . " " . $results[$i]["surname"] . "</th>";
+                            // }
+                            // echo "</tr>";
+
+                            // for ($i=0; $i < 3; $i++) {
+                            //     echo "<td>" . $results[$i]["position"] . "</td>";
+                            // }
+                            // echo "</tr>";
+                            // echo "</table>";
 
                             echo "<table class = table>";
                             echo "<tr>";
@@ -159,7 +184,7 @@ require_once 'data/db_conn.php';
                             }
                             echo "</table>";
                             echo "</div>";
-
+                        echo "</div>";
 
                         }
                     ?>
