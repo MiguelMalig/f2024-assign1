@@ -161,7 +161,7 @@ require_once 'data/db_conn.php';
                             
                             echo "<tr>";
                             echo "<td>".  $result["position"] .  "</td>";
-                            echo "<td><a href=api\drivers.php?driverRef=$qualify[driverRef]>".  $result["forename"] . " " . $result["surname"] . "</a></td>";
+                            echo "<td><a href=drivers.php?driverRef=$qualify[driverRef]>".  $result["forename"] . " " . $result["surname"] . "</a></td>";
                             echo "<td>".  $result["laps"] . "</td>";
                             echo "<td>".  $result["points"] . "</td>";
                             echo "</tr>";
