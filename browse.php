@@ -123,13 +123,13 @@ require_once 'data/db_conn.php';
                             echo "</table>";
                             echo "</div>";
 
-                            // echo "<h1> Results </h1>";
+                            
                             echo "<div class = mx-auto>";
                             echo "<h1> Results </h1>";
                             echo "<div class= d-flex flex-row >";
-                            // echo "<h1> Results </h1>";
+                            
                             for ($i=0; $i < 3; $i++) {
-                                echo "<div class = border border-4 border-danger>";
+                                echo "<div class = border mx-auto>";
                                 echo "<h3>". $results[$i]["forename"] . " " . $results[$i]["surname"] . "</h3>";
                                 if ($results[$i]["position"] == 1) {
                                     echo "<h1>" . $results[$i]["position"] . "st" . "</h1>";
@@ -140,32 +140,11 @@ require_once 'data/db_conn.php';
                                 else  {
                                     echo "<h1>" . $results[$i]["position"] . "rd" . "</h1>";
                                 }
-                                // for ($i=0; $i < 3; $i++) {
-                                //     echo "<h3>". $results[$i]["forename"] . " " . $results[$i]["surname"] . "</h3>";
-                                // }
-                                // for ($i=0; $i < 3; $i++) {
-                                //     echo "<h1>" . $results[$i]["position"] . "</h1>";
-                                // }
+                                
                                 echo "</div>";
                             }   
                             echo "</div>";
-                            // echo "</div>";
                         
-
-                            // echo "<table class = table>";
-                            // echo "<tr>";
-
-                            // for ($i=0; $i < 3; $i++) {
-                            //     echo "<th>". $results[$i]["forename"] . " " . $results[$i]["surname"] . "</th>";
-                            // }
-                            // echo "</tr>";
-
-                            // for ($i=0; $i < 3; $i++) {
-                            //     echo "<td>" . $results[$i]["position"] . "</td>";
-                            // }
-                            // echo "</tr>";
-                            // echo "</table>";
-
                             echo "<table class = table>";
                             echo "<tr>";
                             echo "<th> Position </th>";
