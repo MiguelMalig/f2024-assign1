@@ -34,7 +34,7 @@ require_once 'data/db_conn.php';
             <li class="nav-item"><a href="API's" class="nav-link">APIs</a></li>
         </ul>
     </header>
-<main class="bg-secondary ">
+<main class="bg-secondary mblank-auto">
     <div class="">
         <div class="container">
             <div class="sidebar "> 
@@ -81,7 +81,7 @@ require_once 'data/db_conn.php';
                     
                 ?>
             </div>
-                <div class="content bg-white mx-auto">
+                <div class="content bg-white mblank-auto">
                     <?php
                         if (isset($_GET['raceId'])) {
                             echo "<div>";
@@ -95,7 +95,7 @@ require_once 'data/db_conn.php';
                             echo "</div>";
 
                             //change this to qualifying + results array info.
-                        echo "<div class= d-flex flex-row>";
+                        echo "<div class= d-flex flex-row >";
                             echo "<div class = p-2>";
                             echo "<h1>Qualifying</h1>";
                             echo "<h3>Driver</h3>";
@@ -126,6 +126,7 @@ require_once 'data/db_conn.php';
                             
                             echo "<div class = mx-auto>";
                             echo "<h1> Results </h1>";
+                            echo "<h3>Top 3</h3>";
                             echo "<div class= d-flex flex-row >";
                             
                             for ($i=0; $i < 3; $i++) {
