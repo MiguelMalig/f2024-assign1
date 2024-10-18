@@ -36,7 +36,7 @@ require_once 'data/db_conn.php';
     </header>
 <main>
     <div class="container">
-        <div class="sidebar"> 
+        <div class="col-md-4 col-lg-4 px-md-4"> 
             <!-- //ill completely change this layout once we got functions working. -->
             <h1>What this site is about?</h1><br>
             <p>This site is about Formula 1 car racing data. Specifically season 2022.</p></p>

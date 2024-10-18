@@ -28,13 +28,11 @@ require_once 'data/db_conn.php';
             <span class="fs-4">F1 Dashboard Project</span>
         </a>
         <!-- <h2>Browse</h2> -->
-        <!-- <nav> -->
-            <ul class="nav nav-pills">
-                <li class="nav-item"><a href="/f2024-assign1/index.php?" class="nav-link ">Home</a>
-                <li class="nav-item"><a href="/f2024-assign1/browse.php?" class="nav-link active">Browse</a></li>
-                <li class="nav-item"><a href="API's" class="nav-link">APIs</a></li>
-            </ul>
-        <!-- </nav> -->
+        <ul class="nav nav-pills">
+            <li class="nav-item"><a href="/f2024-assign1/index.php?" class="nav-link ">Home</a>
+            <li class="nav-item"><a href="/f2024-assign1/browse.php?" class="nav-link active">Browse</a></li>
+            <li class="nav-item"><a href="API's" class="nav-link">APIs</a></li>
+        </ul>
     </header>
 <main>
     <div>
