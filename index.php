@@ -18,53 +18,23 @@ require_once 'data/db_conn.php';
     <meta charset="UTF-8">
     <title>F1 Dashboard Project</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="css\styles.css">
 
 </head>
 <body>
-    <header>
-        <h1>F1 Dashboard Project</h1>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a>
-                <li><a href="browse.php">Browse</a></li>
-                <li><a href="API's">APIs</a></li>
+    <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+        <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+            <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+            <span class="fs-4">F1 Dashboard Project</span>
+        </a>
+            <ul class="nav nav-pills">
+                <li class="nav-item"><a href="#home" class="nav-link active">Home</a>
+                <li class="nav-item"><a href="browse.php" class="nav-link">Browse</a></li>
+                <li class="nav-item"><a href="API's" class="nav-link">APIs</a></li>
             </ul>
-        </nav>
     </header>
 <main>
-    <!-- <div>
-        <form action="index.php" method="get">
-                <label> Test Driver Database </label>
-                <input type="text" name="driverRef">
-                <input type="submit" name="Submit">
-        </form>
-    </div> -->
-    <!-- <div>
-        <ul>
-            // <?php
-            // if (isset($_GET['driverRef'])) {
-                /*
-                $driverRef = $_GET['driverRef'];
-                $jsonList = file_get_contents("http://localhost/f2024-assign1/api/drivers.php?driverRef=" . urlencode($driverRef));
-                $drivers = json_decode($jsonList, true);
-                foreach ($drivers as $driver) {
-                    echo "<li> " . $driver['driverRef'] . "</li>";
-                }
-                    */
-            // }
-            // else { // This is supposed to return the entire list of drivers if no query string, but its currently not working.
-            //     $jsonList = file_get_contents("http://localhost/f2024-assign1/api/drivers.php");
-            //     $drivers = json_decode($jsonList, true);
-            //     foreach ($drivers as $driver) {
-            //         echo "<li> " . $driver['driverRef'] . "</li>";
-            //     }
-            // }
-            // ?>
-        </ul>
-    </div> -->
-
-
     <div class="container">
         <div class="sidebar"> 
             <!-- //ill completely change this layout once we got functions working. -->

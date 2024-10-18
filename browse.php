@@ -22,25 +22,21 @@ require_once 'data/db_conn.php';
     <link rel="stylesheet" href="css\styles.css">
 </head>
 <body>
-    <header>
-        <h1>F1 Dashboard Project</h1>
-        <h2>Browse</h2>
-        <nav>
-            <ul>
-                <li><a href="/f2024-assign1/index.php?">Home</a>
-                <li><a href="/f2024-assign1/browse.php?">Browse</a></li>
-                <li><a href="API's">APIs</a></li>
+    <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+        <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+            <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+            <span class="fs-4">F1 Dashboard Project</span>
+        </a>
+        <!-- <h2>Browse</h2> -->
+        <!-- <nav> -->
+            <ul class="nav nav-pills">
+                <li class="nav-item"><a href="/f2024-assign1/index.php?" class="nav-link ">Home</a>
+                <li class="nav-item"><a href="/f2024-assign1/browse.php?" class="nav-link active">Browse</a></li>
+                <li class="nav-item"><a href="API's" class="nav-link">APIs</a></li>
             </ul>
-        </nav>
+        <!-- </nav> -->
     </header>
 <main>
-    <!-- <div>
-        <form action="index.php" method="get">
-                <label> Test Driver Database </label>
-                <input type="text" name="driverRef">
-                <input type="submit" name="Submit">
-        </form>
-    </div> -->
     <div>
 
     </div>

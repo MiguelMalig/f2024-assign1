@@ -34,19 +34,19 @@
       </ul>
     </header>
 
-    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-    <div class="row py-lg-5">
-      <div class="col-lg-6 col-md-8 mx-auto">
-        <?php
-        echo "<h1 class=fw-light>$driver[forename] $driver[surname]</h1>";
-        ?>
-        <p class="lead text-body-secondary">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don’t simply skip over it entirely.</p>
-      </div>
-    </div>
+    <main class="col-md-9 ms-sm-auto col-lg-11 px-md-4 ">
+      <div class="">
+        <div class="row py-lg-5">
+          <div class="col-lg-12 col-md-8 mx-auto">
+              <?php
+              echo "<h1 class=fw-light>$driver[forename] $driver[surname]</h1>";
+              ?>
+              <p class="lead text-body-secondary">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don’t simply skip over it entirely.</p>
+          </div>
+        </div>
 
-
-    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+  <footer class= "flex-column"> 
+    <div class="justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom col-lg-12 col-md-8">
       <h2>Racing Data</h2>
       <div class="table-responsive small">
         <table class="table table-striped table-sm">
@@ -176,6 +176,7 @@
         </table>
       </div>
     </div>
+  </footer>
     </main>
 </body>
 </html>
