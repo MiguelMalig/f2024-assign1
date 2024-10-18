@@ -1,4 +1,6 @@
 <?php
+try{
+
  if (isset($_GET['driverRef'])) {
     $driverRef = $_GET['driverRef'];
     
@@ -9,7 +11,13 @@
     foreach($drivers as $driver){
         
     }
+    
 }
+}catch(Exception $e){
+    throw new Exception("No drivers selected");
+}
+
+
 ?>
 
 <!DOCTYPE html>
@@ -21,6 +29,7 @@
     <title>Document</title>
 </head>
 <body>
+    
     <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
       <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
         <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
@@ -33,19 +42,21 @@
         <li class="nav-item"><a href="#" class="nav-link">APIs</a></li>
       </ul>
     </header>
+<!-- Driver Name/info -->
 
-    <main class="col-md-9 ms-sm-auto col-lg-11 px-md-4 ">
-      <div class="">
-        <div class="row py-lg-5">
-          <div class="col-lg-12 col-md-8 mx-auto">
-              <?php
-              echo "<h1 class=fw-light>$driver[forename] $driver[surname]</h1>";
-              ?>
-              <p class="lead text-body-secondary">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don’t simply skip over it entirely.</p>
-          </div>
-        </div>
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <div class="row py-lg-5">
+      <div class="col-lg-6 col-md-8 mx-auto">
+        <?php
+        echo "<h1 class=fw-light>$driver[forename] $driver[surname]</h1>";
+        ?>
+        <p class="lead text-body-secondary">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don’t simply skip over it entirely.</p>
+      </div>
+    </div>
 
-  <footer class= "flex-column"> 
+<!-- Stats -->
+  <footer class= "fixed-bottom"> 
     <div class="justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom col-lg-12 col-md-8">
       <h2>Racing Data</h2>
       <div class="table-responsive small">
