@@ -20,12 +20,13 @@
     else if (isset($_GET['driverRef'])) {
         $raceId = $_GET['driverRef'];
         /*constructor unecessary join*/
-        $results = Database::getData("SELECT results.driverId, results.position,results.laps,results.points,races.round,circuits.name AS cName
+        $results = Database::getData("SELECT results.driverId, results.position,results.laps,results.points,races.round,circuits.name AS cName, races.year
                                         FROM results
                                         JOIN drivers ON results.driverId = drivers.driverId
                                         JOIN races ON results.raceId = races.raceId
                                         JOIN circuits ON races.circuitId = circuits.circuitId
-                                        WHERE drivers.driverRef = ?",
+                                        WHERE drivers.driverRef = ? AND races.year = 2022
+                                        ORDER BY races.round",
                                         $conn, $_GET['driverRef']);
     }
     else if (isset($_GET['constructorRef'])) {

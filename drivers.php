@@ -64,6 +64,7 @@
                           echo "<th> Circuit </th>";
                           echo "<th> Pos </th>";
                           echo "<th> Points </th>";
+                          echo "<th> Season </th>";
                           echo "</tr>";
                           foreach($results as $result){
 
@@ -72,6 +73,7 @@
                               echo "<td>".  $result["cName"] .  "</td>";;
                               echo "<td>".  $result["position"] . "</td>";
                               echo "<td>".  $result["points"] . "</td>";
+                              echo "<td> $result[year] </td>";
                               echo "</tr>";
                           }
                           echo "</table>";
