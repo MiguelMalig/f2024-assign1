@@ -28,6 +28,16 @@
                                         WHERE drivers.driverRef = ?",
                                         $conn, $_GET['driverRef']);
     }
+    else if (isset($_GET['constructorRef'])) {
+        $constructorRef = $_GET['constructorRef'];
+        $results = Database::getData("SELECT races.round, races.name AS circuit, drivers.forename, drivers.surname, results.position, results.points
+                                        FROM results
+                                        JOIN races ON results.raceId = races.raceId
+                                        JOIN drivers ON results.driverId = drivers.driverId
+                                        JOIN constructors ON results.constructorId = constructors.constructorId
+                                        WHERE constructors.constructorRef = ? AND races.year = 2024
+                                        ORDER BY races.round ASC", $conn, $_GET['constructorRef']);
+    }
     else {
         // Don't think we need this since instructions doesn't specify to give all of the qualifying table if no query string.
         //WHEN THERES NO SELECTION YET
