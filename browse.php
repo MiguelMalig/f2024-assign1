@@ -107,21 +107,26 @@ require_once 'data/db_conn.php';
                           echo "<h3 class='display-5 fw-light'>Top 3</h3>";
                           echo '</div>';
                           echo "<div class='d-flex flex-row'>";
+                         
+                          $medals = ['gold', 'silver', 'bronze'];
                           
                           for ($i = 0; $i < 3; $i++) {
-                            echo '<div class="col-md-4">';
-                            echo '<div class="border p-3 m-2 text-center">';
-                            echo '<h3>' . $results[$i]["forename"] . ' ' . $results[$i]["surname"] . '</h3>';
-                            if ($results[$i]["position"] == 1) {
-                                echo '<h1>' . $results[$i]["position"] . 'st</h1>';
-                            } else if ($results[$i]["position"] == 2) {
-                                echo '<h1>' . $results[$i]["position"] . 'nd</h1>';
-                            } else {
-                                echo '<h1>' . $results[$i]["position"] . 'rd</h1>';
-                            }
-                            echo '</div>';
-                            echo '</div>';
-                        }
+                              $medal = $medals[$i];
+                              echo '<div class="col-md-4">';
+                              echo '<div class="border p-3 m-2 text-center ' . $medal . '">';
+                              echo '<h3>' . $results[$i]["forename"] . ' ' . $results[$i]["surname"] . '</h3>';
+                              if ($results[$i]["position"] == 1) {
+                                  echo '<h1>' . $results[$i]["position"] . 'st</h1>';
+                              } else if ($results[$i]["position"] == 2) {
+                                  echo '<h1>' . $results[$i]["position"] . 'nd</h1>';
+                              } else {
+                                  echo '<h1>' . $results[$i]["position"] . 'rd</h1>';
+                              }
+                              echo '</div>';
+                              echo '</div>';
+                          }
+                          
+                          
                           
                           echo "</div>";
                           echo "<table class='table'>";
@@ -150,7 +155,10 @@ require_once 'data/db_conn.php';
 
                 //USER DID NOT SELECT RACE YET==================================================================================================
                 else { // This is supposed to return the entire list of drivers if no query string, but its currently not working.
-                    
+                    echo "<div class='d-flex flex-column align-items-center mb-5'>";
+                    echo "<h1 class='display-2 fw-bold'>2022 Races</h1>";
+                    echo "<h1 class='display-5 fw-light'>Select a list of 2022 races below to being your journey.</h1>";
+                    echo "</div>";
                     echo '<div class="table-responsive small">';
                     echo '<table class="table table-striped table-sm">';
                     echo '<thead>';
