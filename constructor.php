@@ -30,7 +30,7 @@
       <ul class="nav nav-pills">
         <li class="nav-item"><a href="/f2024-assign1/index.php?" class="nav-link active" aria-current="page">Home</a></li>
         <li class="nav-item"><a href="/f2024-assign1/browse.php?" class="nav-link">Browse</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">APIs</a></li>
+        <li class="nav-item"><a href="/f2024-assign1/api.php" class="nav-link">APIs</a></li>
       </ul>
     </header>
 
