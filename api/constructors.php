@@ -3,7 +3,7 @@
 
     header('Content-Type: application/json');
 
-    $conn == Database::createConnection();
+    $conn = Database::createConnection();
 
     switch(true) {
         case isset($_GET['constructorRef']):
@@ -13,5 +13,5 @@
         default:
             $results = Database::getData("SELECT * from constructors", $conn);
     }
-echo json_encode($results);
+echo json_encode($results); 
 ?>
