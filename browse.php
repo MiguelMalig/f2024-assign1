@@ -154,7 +154,7 @@ require_once 'data/db_conn.php';
                       
 
                 //USER DID NOT SELECT RACE YET==================================================================================================
-                else { // This is supposed to return the entire list of drivers if no query string, but its currently not working.
+                else {
                     echo "<div class='d-flex flex-column align-items-center mb-5'>";
                     echo "<h1 class='display-2 fw-bold'>2022 Races</h1>";
                     echo "<h1 class='display-5 fw-light'>Select a list of 2022 races below to being your journey.</h1>";
