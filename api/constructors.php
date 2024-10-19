@@ -5,7 +5,7 @@
 
     $conn == Database::createConnection();
 
-    switch (true) {
+    switch(true) {
         case isset($_GET['constructorRef']):
             $circuitRef = $_GET['constructorRef'];
             $results = Database::getData("SELECT * from constructors WHERE constructorRef = ?", $conn, $_GET['constructorRef']);

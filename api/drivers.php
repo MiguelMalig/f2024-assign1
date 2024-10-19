@@ -19,7 +19,7 @@ switch (true) {
         $race = $_GET['raceID'];
         $results = Database::getData("SELECT raceID, driverRef, code, forename, surname, dob, nationality, url from results 
                             RIGHT JOIN drivers on results.driverId=drivers.driverId 
-                            WHERE results.raceID= ?", $conn, $_GET['driverRef']);
+                            WHERE results.raceID= ?", $conn, $_GET['raceID']);
         break;
 
     // if not query string passed, then return all drivers from database..

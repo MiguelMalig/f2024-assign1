@@ -14,7 +14,17 @@
                                         JOIN constructors ON results.constructorId = constructors.constructorId
                                         WHERE results.raceId = ?
                                         ORDER BY results.position  ASC", $conn, $_GET['raceId']);
-    } 
+    }
+    else if (isset($_GET['driverRef'])) {
+        $raceId = $_GET['driverRef'];
+        $results = Database::getData("SELECT results.driverId, drivers.driverRef, results.constructorId, drivers.forename, drivers.surname, results.position,  constructors.name, constructors.constructorRef, constructors.nationality,results.laps,results.points
+                                        FROM results
+                                        JOIN drivers ON results.driverId = drivers.driverId
+                                        JOIN races ON results.raceId = races.raceId
+                                        JOIN constructors ON results.constructorId = constructors.constructorId
+                                        WHERE drivers.driverRef = ?",
+                                        $conn, $_GET['driverRef']);
+    }
     else {
         // Don't think we need this since instructions doesn't specify to give all of the qualifying table if no query string.
         //WHEN THERES NO SELECTION YET
