@@ -4,9 +4,9 @@
     $driverRef = $_GET['driverRef'];
     
     $jsonListdrivers = file_get_contents("http://localhost/f2024-assign1/api/drivers.php?driverRef=$driverRef");
-
+    $jsonListresults = file_get_contents("http://localhost/f2024-assign1/api/drivers.php?driverRef=$driverRef");
     $drivers = json_decode($jsonListdrivers, true);
-
+    $results = json_decode($jsonListresults, true);
     foreach($drivers as $driver){
         
     }
