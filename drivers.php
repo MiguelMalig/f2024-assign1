@@ -1,5 +1,4 @@
 <?php
-try{
 
  if (isset($_GET['driverRef'])) {
     $driverRef = $_GET['driverRef'];
@@ -13,9 +12,7 @@ try{
     }
     
 }
-}catch(Exception $e){
-    throw new Exception("No drivers selected");
-}
+
 
 
 ?>
@@ -45,15 +42,15 @@ try{
 <!-- Driver Name/info -->
 
     <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-    <div class="row py-lg-5">
-      <div class="col-lg-6 col-md-8 mx-auto">
+    <div class="d-flex justify-content-center py-lg-5 border-bottom">
+    <div class="col-lg-4">
         <?php
-        echo "<h1 class=fw-light>$driver[forename] $driver[surname]</h1>";
+        echo "<h1 class='display-4 fw-'>$driver[forename] $driver[surname]</h1>";
+        echo "<p class='lead text-body-secondary'>Date of Birth: $driver[dob]</p>";
+        echo "<p class='lead text-body-secondary'>Nationality: $driver[nationality]</p>";
         ?>
-        <p class="lead text-body-secondary">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don’t simply skip over it entirely.</p>
-      </div>
     </div>
+</div>
 
 <!-- Stats -->
   <footer class= "fixed-bottom"> 

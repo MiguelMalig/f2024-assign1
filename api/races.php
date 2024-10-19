@@ -11,7 +11,7 @@
     //WHEN USER CLICKS SELECTION
     if (isset($_GET['raceId'])) {
         $raceId = $_GET['raceId'];
-        $results = Database::getData("SELECT DISTINCT races.raceId, races.circuitId, circuits.name AS cName, races.name AS rName,races.round,circuits.location, circuits.country,races.date,races.url,drivers.forename,drivers.surname,constructors.constructorRef,qualifying.q1,qualifying.q2,qualifying.q3
+        $results = Database::getData("SELECT DISTINCT races.raceId, races.circuitId, circuits.name AS cName, races.name AS rName,races.round,circuits.location, circuits.country,races.date AS raceDate,races.url AS raceUrl,drivers.forename,drivers.surname,constructors.constructorRef,qualifying.q1,qualifying.q2,qualifying.q3
                                         FROM races
                                         JOIN circuits ON races.circuitId = circuits.circuitId
                                         JOIN qualifying ON races.raceId = qualifying.raceId 
@@ -22,7 +22,7 @@
     else {
 
         //WHEN THERES NO SELECTION YET
-        $results = Database::getData("SELECT races.raceId, races.round, races.name as rName, circuits.location, circuits.country
+        $results = Database::getData("SELECT races.raceId, races.round, races.name as rName, circuits.location, circuits.country,races.date AS raceDate,races.url AS raceUrl
                                         FROM races
                                         JOIN circuits ON races.circuitId = circuits.circuitId
                                         JOIN seasons ON races.year = seasons.year

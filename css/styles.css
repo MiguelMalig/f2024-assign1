@@ -1,10 +1,15 @@
 #herophoto{
-    filter:brightness(80%);
-    background-image: url(../photos/f1Home1.jpg);
+    
+    background-image: url(../photos/Darkenedhero2.png);
     background-size: cover;
-    background-position: center;
+    background-position: center;   
+    text-shadow: 2px 2px 2px black;
 }
 
+
+#creators{
+    margin-bottom: 40px;
+}
 /*
 
 header{
