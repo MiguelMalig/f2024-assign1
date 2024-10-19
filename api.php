@@ -40,15 +40,15 @@
               <td>Returns all the circuits</td>
             </tr>
             <tr>
-              <td><a href="/f2024-assign1/api/circuits.php?ref=monaco">/api/circuits.php?ref=monaco DONE</a></td>
+              <td><a href="/f2024-assign1/api/circuits.php?circuitRef=monaco">/api/circuits.php?circuitRef=monaco DONE</a></td>
               <td>Return just a specified circuit</td>
             </tr>
             <tr>
-              <td><a href="/f2024-assign1/api/constructors.php">/api/constructors.php BROKEN</a></td>
+              <td><a href="/f2024-assign1/api/constructors.php">/api/constructors.php DONE</a></td>
               <td>Returns all the constructors</td>
             </tr>
             <tr>
-              <td><a href="/f2024-assign1/api/constructors.php?constructorRef=mclaren">/api/constructors.php?constructorRef=mclaren BROKEN</a></td>
+              <td><a href="/f2024-assign1/api/constructors.php?constructorRef=mclaren">/api/constructors.php?constructorRef=mclaren DONE</a></td>
               <td>Return just a specific constructor</td>
             </tr>
             <tr>
