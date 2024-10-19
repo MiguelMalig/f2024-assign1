@@ -31,7 +31,7 @@
     }
     else if (isset($_GET['constructorRef'])) {
         $constructorRef = $_GET['constructorRef'];
-        $results = Database::getData("SELECT races.round, races.name AS circuit, drivers.forename, drivers.surname, results.position, results.points, races.year
+        $results = Database::getData("SELECT races.round, races.name AS circuit, drivers.forename, drivers.surname, results.position, results.points, races.year, constructors.name, constructors.nationality
                                         FROM results
                                         JOIN races ON results.raceId = races.raceId
                                         JOIN drivers ON results.driverId = drivers.driverId
