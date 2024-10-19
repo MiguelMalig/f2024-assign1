@@ -30,12 +30,12 @@
     }
     else if (isset($_GET['constructorRef'])) {
         $constructorRef = $_GET['constructorRef'];
-        $results = Database::getData("SELECT races.round, races.name AS circuit, drivers.forename, drivers.surname, results.position, results.points
+        $results = Database::getData("SELECT races.round, races.name AS circuit, drivers.forename, drivers.surname, results.position, results.points, races.year
                                         FROM results
                                         JOIN races ON results.raceId = races.raceId
                                         JOIN drivers ON results.driverId = drivers.driverId
                                         JOIN constructors ON results.constructorId = constructors.constructorId
-                                        WHERE constructors.constructorRef = ? AND races.year = 2024
+                                        WHERE constructors.constructorRef = ? AND races.year = 2022
                                         ORDER BY races.round ASC", $conn, $_GET['constructorRef']);
     }
     else {
