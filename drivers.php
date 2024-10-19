@@ -50,6 +50,7 @@
         echo "<h1 class='display-4 fw-'>$driver[forename] $driver[surname]</h1>";
         echo "<p class='lead text-body-secondary'>Date of Birth: $driver[dob]</p>";
         echo "<p class='lead text-body-secondary'>Nationality: $driver[nationality]</p>";
+        echo "<p class='lead text-body-secondary'>url: $driver[url]</p>";
         ?>
     </div>
 </div>
