@@ -36,9 +36,9 @@
       </a>
 
       <ul class="nav nav-pills">
-        <li class="nav-item"><a href="/f2024-assign1/index.php?" class="nav-link active" aria-current="page">Home</a></li>
-        <li class="nav-item"><a href="/f2024-assign1/browse.php?" class="nav-link">Browse</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">APIs</a></li>
+        <li class="nav-item"><a href="index.php?" class="nav-link active" aria-current="page">Home</a></li>
+        <li class="nav-item"><a href="browse.php?" class="nav-link">Browse</a></li>
+        <li class="nav-item"><a href="api.php" class="nav-link">APIs</a></li>
       </ul>
     </header>
 <!-- Driver Name/info -->
@@ -50,6 +50,7 @@
         echo "<h1 class='display-4 fw-'>$driver[forename] $driver[surname]</h1>";
         echo "<p class='lead text-body-secondary'>Date of Birth: $driver[dob]</p>";
         echo "<p class='lead text-body-secondary'>Nationality: $driver[nationality]</p>";
+        echo "<p class='lead text-body-secondary'>url: $driver[url]</p>";
         ?>
     </div>
 </div>
