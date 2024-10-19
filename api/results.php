@@ -15,13 +15,16 @@
                                         WHERE results.raceId = ?
                                         ORDER BY results.position  ASC", $conn, $_GET['raceId']);
     }
+
+    // I Can change this ONLY BEING USED IN DRIVERS 
     else if (isset($_GET['driverRef'])) {
         $raceId = $_GET['driverRef'];
-        $results = Database::getData("SELECT results.driverId, drivers.driverRef, results.constructorId, drivers.forename, drivers.surname, results.position,  constructors.name, constructors.constructorRef, constructors.nationality,results.laps,results.points
+        /*constructor unecessary join*/
+        $results = Database::getData("SELECT results.driverId, results.position,results.laps,results.points,races.round,circuits.name AS cName
                                         FROM results
                                         JOIN drivers ON results.driverId = drivers.driverId
                                         JOIN races ON results.raceId = races.raceId
-                                        JOIN constructors ON results.constructorId = constructors.constructorId
+                                        JOIN circuits ON races.circuitId = circuits.circuitId
                                         WHERE drivers.driverRef = ?",
                                         $conn, $_GET['driverRef']);
     }
