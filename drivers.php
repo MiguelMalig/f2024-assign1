@@ -50,34 +50,40 @@
         echo "<h1 class='display-4 fw-'>$driver[forename] $driver[surname]</h1>";
         echo "<p class='lead text-body-secondary'>Date of Birth: $driver[dob]</p>";
         echo "<p class='lead text-body-secondary'>Nationality: $driver[nationality]</p>";
-        echo "<p class='lead text-body-secondary'>url: $driver[url]</p>";
+        echo "<p class='lead text-body-secondary'><a href=$driver[url]>$driver[url]</a></p>";
         ?>
     </div>
 </div>
 
 <!-- Stats -->
- <?php 
-                          echo "<h1 class=display-4 fw-normal text-body-emphasis>Formula 1 Stats</h1>";
-                          echo "<table class = table>";
-                          echo "<tr>";
-                          echo "<th> Rnd </th>";
-                          echo "<th> Circuit </th>";
-                          echo "<th> Pos </th>";
-                          echo "<th> Points </th>";
-                          echo "<th> Season </th>";
-                          echo "</tr>";
-                          foreach($results as $result){
+<?php 
 
-                              echo "<tr>";
-                              echo "<td>".  $result["round"] .  "</td>";
-                              echo "<td>".  $result["cName"] .  "</td>";;
-                              echo "<td>".  $result["position"] . "</td>";
-                              echo "<td>".  $result["points"] . "</td>";
-                              echo "<td> $result[year] </td>";
-                              echo "</tr>";
-                          }
-                          echo "</table>";
- ?>
+echo "<div class='container marketing'>";
+echo "<div class='row featurette'>";
+echo "<h1 class=display-4 fw-normal text-body-emphasis>Formula 1 Stats</h1>";
+echo "<table class = table>";
+echo "<tr>";
+echo "<th> Rnd </th>";
+echo "<th> Circuit </th>";
+echo "<th> Pos </th>";
+echo "<th> Points </th>";
+echo "<th> Season </th>";
+echo "</tr>";
+foreach($results as $result){
+
+    echo "<tr>";
+    echo "<td>".  $result["round"] .  "</td>";
+    echo "<td>".  $result["cName"] .  "</td>";;
+    echo "<td>".  $result["position"] . "</td>";
+    echo "<td>".  $result["points"] . "</td>";
+    echo "<td> $result[year] </td>";
+    echo "</tr>";
+}
+echo "</table>";
+echo "</div>";
+echo "</div>";
+echo "</div>";
+?>
     </main>
 </body>
 </html>

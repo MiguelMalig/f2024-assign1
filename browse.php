@@ -65,9 +65,10 @@ require_once 'data/db_conn.php';
                                 echo "<div class='row featurette'>";
                                     echo "<div class='d-flex flex-column align-items-center'>";
                                         echo "<h1 class='display-2 fw-bold'>$race[rName]</h1>";
-                                        echo "<h1 class='display-5 fw-light'>$race[cName]</h1>";
+                                        echo "<h1 class='display-5 fw-light'>$race[cName] <strong>(R:$race[round])</strong</h1>";
                                         echo "<p class='col-md-8 fs-4 text-center'>$race[location], $race[country]</p>";
-                                        echo "<p class='col-md-8 fs-4 text-center'>$race[raceDate]";
+                                        echo "<p class='col-md-8 fs-4 text-center'>$race[raceDate]</p>";
+                                        echo "<p class='display-5 col-md-8 fs-4 text-center'><a href=$race[raceUrl]>$race[raceUrl]</a></p>";
                                 echo "</div>";
                             echo "<hr class='featurette-divider'>";
 
@@ -114,7 +115,7 @@ require_once 'data/db_conn.php';
                               $medal = $medals[$i];
                               echo '<div class="col-md-4">';
                               echo '<div class="border p-3 m-2 text-center ' . $medal . '">';
-                              echo '<h3>' . $results[$i]["forename"] . ' ' . $results[$i]["surname"] . '</h3>';
+                              echo "<h3><a href=drivers.php?driverRef=" . $results[$i]['driverRef']. ">" . $results[$i]["forename"] . ' ' . $results[$i]["surname"] . '</a></h3>';
                               if ($results[$i]["position"] == 1) {
                                   echo '<h1>' . $results[$i]["position"] . 'st</h1>';
                               } else if ($results[$i]["position"] == 2) {
@@ -141,7 +142,7 @@ require_once 'data/db_conn.php';
                           foreach ($results as $result) {
                               echo "<tr>";
                               echo "<td>" . $result["position"] . "</td>";
-                              echo "<td><a href=drivers.php?driverRef=$qualify[driverRef]>".  $result["forename"] . " " . $result["surname"] . "</a></td>";
+                              echo "<td><a href=drivers.php?driverRef=$result[driverRef]>".  $result["forename"] . " " . $result["surname"] . "</a></td>";
                               echo "<td><a href=constructor.php?constructorRef=$result[constructorRef]>$result[name]</a></td>";
                               echo "<td>" . $result["laps"] . "</td>";
                               echo "<td>" . $result["points"] . "</td>";

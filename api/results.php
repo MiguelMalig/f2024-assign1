@@ -7,7 +7,7 @@
 
     if (isset($_GET['raceId'])) {
         $raceId = $_GET['raceId'];
-        $results = Database::getData("SELECT results.raceId, results.driverId, results.constructorId, drivers.forename, drivers.surname, results.position, races.year, races.round, races.date, constructors.name, constructors.constructorRef, constructors.nationality,results.laps,results.points
+        $results = Database::getData("SELECT results.raceId, results.driverId, results.constructorId, drivers.driverRef, drivers.forename, drivers.surname, results.position, races.year, races.round, races.date, constructors.name, constructors.constructorRef, constructors.nationality,results.laps,results.points
                                         FROM results
                                         JOIN drivers ON results.driverId = drivers.driverId
                                         JOIN races ON results.raceId = races.raceId
@@ -31,7 +31,7 @@
     }
     else if (isset($_GET['constructorRef'])) {
         $constructorRef = $_GET['constructorRef'];
-        $results = Database::getData("SELECT races.round, races.name AS circuit, drivers.forename, drivers.surname, results.position, results.points, races.year, constructors.name, constructors.nationality
+        $results = Database::getData("SELECT races.round, races.name AS circuit, drivers.forename, drivers.surname, results.position, results.points, races.year, constructors.name, constructors.nationality, constructors.url
                                         FROM results
                                         JOIN races ON results.raceId = races.raceId
                                         JOIN drivers ON results.driverId = drivers.driverId

@@ -41,10 +41,13 @@
         <?php
         echo "<h1 class='display-4 fw-'>$constructor[name]</h1>";
         echo "<p class='lead text-body-secondary'>Nationality: $constructor[nationality]</p>";
+        echo "<p class='lead text-body-secondary'><a href=$constructor[url]>$constructor[url]</a></p>";
         ?>
     </div>
 </div>
 <?php 
+                            echo "<div class='container marketing'>";
+                            echo "<div class='row featurette'>";
                           echo "<h1 class=display-4 fw-normal text-body-emphasis>Formula 1 Stats</h1>";
                           echo "<table class = table>";
                           echo "<tr>";
@@ -67,6 +70,8 @@
                               echo "</tr>";
                           }
                           echo "</table>";
+                          echo "</div>";
+                          echo "</div>";
  ?>
 
 </main>
