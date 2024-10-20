@@ -1,14 +1,5 @@
 <?php
 require_once 'data/db_conn.php';
-// include 'api/drivers.php';
-
-// try {
-//     $conn = Database::createConnection();
-
-// }
-// catch(PDOException $e) {
-//     echo "Database connection failed.";
-// }
 ?>
 
 

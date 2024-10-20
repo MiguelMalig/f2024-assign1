@@ -3,8 +3,6 @@ include_once "../data/db_conn.php";
 
 header('Content-Type: application/json');
 
-//$driver = getData("SELECT driverRef from drivers"); // don't know why I put this here, going to keep it just in case I remember why..
-
 $conn = Database::createConnection();
 
 switch (true) {

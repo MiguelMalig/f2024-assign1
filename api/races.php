@@ -3,10 +3,6 @@
 
     header("Content-Type: application/json");
     
-
-    //drivers.driverRef,constructors.constructorRef,qualifying.q1,qualifying.q2,qualifying.q3*/
-
-    //function getData(){
     $conn = Database::createConnection();
     //WHEN USER CLICKS SELECTION
     if (isset($_GET['raceId'])) {

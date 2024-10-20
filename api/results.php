@@ -40,7 +40,6 @@
                                         ORDER BY races.round ASC", $conn, $_GET['constructorRef']);
     }
     else {
-        // Don't think we need this since instructions doesn't specify to give all of the qualifying table if no query string.
         //WHEN THERES NO SELECTION YET
         $results = Database::getData("SELECT results.raceId, results.driverId, results.constructorId, drivers.forename, drivers.surname, results.position, races.year, races.round, races.date, constructors.name, constructors.constructorRef, constructors.nationality
                                         FROM results

@@ -15,7 +15,6 @@
                                         ORDER BY qualifying.position  ASC  LIMIT 10;", $conn, $_GET['raceId']);
     } 
     else {
-        // Don't think we need this since instructions doesn't specify to give all of the qualifying table if no query string.
         //WHEN THERES NO SELECTION YET
         $results = Database::getData("SELECT qualifying.raceId, qualifying.driverId, qualifying.constructorId, drivers.forename, drivers.surname, qualifying.q1, qualifying.q2, qualifying.q3, qualifying.position 
                                         FROM qualifying
@@ -23,5 +22,4 @@
                                         ORDER BY qualifying.position  ASC", $conn);
     }
 echo json_encode($results);
-  //  }
 ?>
