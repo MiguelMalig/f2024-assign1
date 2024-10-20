@@ -38,7 +38,7 @@
           </thead>
           <tbody>
             <tr>
-              <td><a href="/f2024-assign1/api/circuits.php">/api/circuits.php</a></td>
+              <td><a href="api/circuits.php">/api/circuits.php</a></td>
               <td>Returns all the circuits</td>
             </tr>
             <tr>

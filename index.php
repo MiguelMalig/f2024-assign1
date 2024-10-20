@@ -23,7 +23,7 @@ require_once 'data/db_conn.php';
             <ul class="nav nav-pills mb-4">
                 <li class="nav-item"><a href="#home" class="nav-link active">Home</a>
                 <li class="nav-item"><a href="browse.php" class="nav-link">Browse</a></li>
-                <li class="nav-item"><a href="/f2024-assign1/api.php" class="nav-link">APIs</a></li>
+                <li class="nav-item"><a href="api.php" class="nav-link">APIs</a></li>
             </ul>
 
 
