@@ -42,47 +42,47 @@
               <td>Returns all the circuits</td>
             </tr>
             <tr>
-              <td><a href="/f2024-assign1/api/circuits.php?circuitRef=monaco">/api/circuits.php?circuitRef=monaco </a></td>
+              <td><a href="api/circuits.php?circuitRef=monaco">/api/circuits.php?circuitRef=monaco </a></td>
               <td>Return just a specified circuit</td>
             </tr>
             <tr>
-              <td><a href="/f2024-assign1/api/constructors.php">/api/constructors.php</a></td>
+              <td><a href="api/constructors.php">/api/constructors.php</a></td>
               <td>Returns all the constructors</td>
             </tr>
             <tr>
-              <td><a href="/f2024-assign1/api/constructors.php?constructorRef=mclaren">/api/constructors.php?constructorRef=mclaren </a></td>
+              <td><a href="api/constructors.php?constructorRef=mclaren">/api/constructors.php?constructorRef=mclaren </a></td>
               <td>Return just a specific constructor</td>
             </tr>
             <tr>
-              <td><a href="/f2024-assign1/api/drivers.php">/api/drivers.php </a></td>
+              <td><a href="api/drivers.php">/api/drivers.php </a></td>
               <td>Returns all the drivers for the season</td>
             </tr>
             <tr>
-              <td><a href="/f2024-assign1/api/drivers.php?driverRef=hamilton">/api/drivers.php?driverRef=hamilton </a></td>
+              <td><a href="api/drivers.php?driverRef=hamilton">/api/drivers.php?driverRef=hamilton </a></td>
               <td>Returns just the specified driver</td>
             </tr>
             <tr>
-              <td><a href="/f2024-assign1/api/drivers.php?raceID=1106">/api/drivers.php?raceID=1106 </a></td>
+              <td><a href="api/drivers.php?raceID=1106">/api/drivers.php?raceID=1106 </a></td>
               <td>Returns the drivers within a given race</td>
             </tr>
             <tr>
-              <td><a href="/f2024-assign1/api/races.php?raceId=1105">/api/races.php?raceId=1105 </a></td>
+              <td><a href="api/races.php?raceId=1105">/api/races.php?raceId=1105 </a></td>
               <td>Returns just the specified race. </td>
             </tr>
             <tr>
-              <td><a href="/f2024-assign1/api/races.php">/api/races.php  </a></td>
+              <td><a href="api/races.php">/api/races.php  </a></td>
               <td>Returns the races within the 2022 season ordered by round</td>
             </tr>
             <tr>
-              <td><a href="/f2024-assign1/api/qualifying.php?raceId=1105">/api/qualifying.php?raceId=1105 </a></td>
+              <td><a href="api/qualifying.php?raceId=1105">/api/qualifying.php?raceId=1105 </a></td>
               <td>Returns the qualifying results for the specified race,</td>
             </tr>
             <tr>
-              <td><a href="/f2024-assign1/api/results.php?raceId=1105">/api/results.php?raceId=1105 </a></td>
+              <td><a href="api/results.php?raceId=1105">/api/results.php?raceId=1105 </a></td>
               <td>Returns the results for the specified race</td>
             </tr>
             <tr>
-              <td><a href="/f2024-assign1/api/results.php?driverRef=max_verstappen">/api/results.php?driverRef=max_verstappen </a></td>
+              <td><a href="api/results.php?driverRef=max_verstappen">/api/results.php?driverRef=max_verstappen </a></td>
               <td>Returns all the results for a given driver</td> 
             </tr>
           </tbody>
